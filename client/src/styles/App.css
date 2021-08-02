@@ -1,0 +1,20 @@
+/* Main styles */
+.app-main {
+  text-align: center;
+}
+
+/* Bootstrap Card style */
+.card {
+  margin: 16px;
+}
+
+/* Bootstrap Pagination style */
+.pagination {
+  justify-content: center;
+}
+
+/* Search Bar styles */
+.feed-search-bar-container {
+  display: flex;
+  margin: 16px;
+}
