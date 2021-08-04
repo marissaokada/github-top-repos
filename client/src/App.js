@@ -9,8 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 
 const apiRoutes = {
-  'search': 'api/search/repositories',
-  'top': '/api/top/repositories'
+  'search': 'https://search-github-repos-mokada.herokuapp.com/api/search/repositories',
+  'top': 'https://search-github-repos-mokada.herokuapp.com/api/top/repositories'
 };
 const pageLimit = 20;
 
