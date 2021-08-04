@@ -2,8 +2,7 @@ require('dotenv').config();
 const express = require('express'),
       fetch = require('node-fetch');
 
-const app = express(),
-      PORT = process.env.PORT || 3001;
+const app = express();
 
 app.use(express.json());
 
@@ -40,6 +39,6 @@ app.post('/api/search/repositories', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`Server listening on ${PORT}`);
 });
