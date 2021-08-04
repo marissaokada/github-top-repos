@@ -34,8 +34,8 @@ app.post('/api/search/repositories', async (req, res) => {
     const githubData = await response.json();
     return res.status(200).send({ githubData });
   } catch(error) {
-    console.error('Error making top repo request', error);
-    return res.status(500).send('Error making top repo request: ' + error);
+    console.error('Error making search repo request', error);
+    return res.status(500).send('Error making search repo request: ' + error);
   }
 });
 
