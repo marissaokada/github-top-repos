@@ -18,3 +18,14 @@
   display: flex;
   margin: 16px;
 }
+
+/* No Results styles */
+.no-results-container {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
+
+.no-results-message {
+  margin: 0;
+}

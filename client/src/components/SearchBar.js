@@ -13,8 +13,7 @@ const SearchBar = props => {
 
 
   const handleKeyPress = (event) => {
-    if (event.keyCode === 13) {
-      event.preventDefault();
+    if (event.key === 'Enter') {
       handleSubmit(event);
     }
   }
