@@ -6,8 +6,10 @@
   "author": "Marissa Okada <marissaokada@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "client": "cd client && yarn start",
     "dev-server": "nodemon server/index.js",
-    "server": "node server/index.js"
+    "server": "node server/index.js",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "dependencies": {
     "dotenv": "^10.0.0",
@@ -15,6 +17,7 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "concurrently": "^6.2.0",
     "nodemon": "^2.0.12"
   }
 }
