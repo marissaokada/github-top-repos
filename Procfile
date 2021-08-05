@@ -1,2 +1,2 @@
-api: cd client && yarn start
-web: REACT_APP_PORT=$PORT && yarn server
+web: cd client && yarn start
+api: REACT_APP_PORT=$PORT && yarn server

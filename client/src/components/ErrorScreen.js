@@ -4,7 +4,7 @@ const ErrorScreen = () => {
   return (
     <div className="error-screen-container">
       <h1 className="error-screen-header">
-        Error getting data
+        Error getting data...
       </h1>
     </div>
   )
