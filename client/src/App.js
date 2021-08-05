@@ -65,7 +65,7 @@ const App = () => {
   }
 
   const mapSearchItems = () => {
-    if (data.githubData) {
+    if (data && data.githubData) {
       const { items } = data.githubData;
       if (items.length > 0) {
         return (
