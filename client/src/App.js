@@ -128,13 +128,17 @@ const App = () => {
         ) : (
           <Fragment>
             {mapSearchItems()}
-            <PaginationWrapper
-              currentPage={page}
-              onPageChanged={onPageChanged}
-              pageLimit={pageLimit}
-              pageNeighbours={2}
-              totalRecords={data.githubData.total_count}
-            />
+            {
+              data && data.githubData &&
+              <PaginationWrapper
+                currentPage={page}
+                onPageChanged={onPageChanged}
+                pageLimit={pageLimit}
+                pageNeighbours={2}
+                totalRecords={data.githubData.total_count}
+              />
+            }
+
           </Fragment>
         )
       }
