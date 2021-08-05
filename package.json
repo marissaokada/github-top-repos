@@ -10,7 +10,7 @@
     "dev-server": "nodemon server/index.js",
     "server": "node server/index.js",
     "start": "npx concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "yarn install && cd client && yarn install && yarn build"
+    "heroku-postbuild": "yarn install && cd client && yarn install"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
