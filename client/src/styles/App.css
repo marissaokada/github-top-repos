@@ -20,7 +20,7 @@
 }
 
 /* No Results styles */
-.no-results-container {
+.no-results-container, .error-screen-container {
   display: flex;
   flex-direction: column;
   margin: 16px;

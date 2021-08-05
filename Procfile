@@ -1,2 +1,2 @@
-web: cd client && yarn start
 api: yarn server
+web: cd client && yarn start

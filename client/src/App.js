@@ -1,4 +1,5 @@
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react';
+import ErrorScreen from './components/ErrorScreen';
 import LoadingScreen from './components/LoadingScreen';
 import NoResults from './components/NoResults';
 import PaginationWrapper from './components/Pagination';
@@ -64,14 +65,20 @@ const App = () => {
   }
 
   const mapSearchItems = () => {
-    const { items } = data.githubData;
-    if (items.length > 0) {
-      return (
-        items.map((item, idx) => <SearchItem key={idx} item={item} /> )
-      );
+    if (data.githubData) {
+      const { items } = data.githubData;
+      if (items.length > 0) {
+        return (
+          items.map((item, idx) => <SearchItem key={idx} item={item} /> )
+        );
+      } else {
+        return (
+          <NoResults searchTerm={searchTerm} />
+        );
+      }
     } else {
       return (
-        <NoResults searchTerm={searchTerm} />
+        <ErrorScreen />
       );
     }
   }
