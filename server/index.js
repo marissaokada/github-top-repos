@@ -27,7 +27,6 @@ app.post('/api/top/repositories', async (req, res) => {
 });
 
 app.post('/api/search/repositories', async (req, res) => {
-  console.log('search Data ', searchOptions, req.body);
   const searchQueryString = encodeURIComponent(`${req.body.searchTerm} in:name sort:stars`);
   try {
     const response = await fetch(`https://api.github.com/search/repositories?q=${searchQueryString}` + `&order=desc+&page=${req.body.page}&per_page=${req.body.per_page}`, searchOptions)
