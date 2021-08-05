@@ -9,6 +9,8 @@ import SearchItem from './components/SearchItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 
+console.log("hello", process.env)
+
 const apiRoutes = {
   'search': `https://search-github-repos-mokada.herokuapp.com:${process.env.PORT || process.env.REACT_APP_PORT}/api/search/repositories`,
   'top': `https://search-github-repos-mokada.herokuapp.com:${process.env.PORT || process.env.REACT_APP_PORT}/api/top/repositories`
