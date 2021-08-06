@@ -95,7 +95,6 @@ const App = () => {
     if (!!isSubmitting && searchType === 'search' && (prevValues.current.searchTerm !== searchTerm)) {
       prevValues.current.searchTerm = searchTerm;
       prevValues.current.page = page;
-      console.log('useeffect prev', prevValues, prevValues.current.searchTerm);
       fetchRepos();
     }
 
