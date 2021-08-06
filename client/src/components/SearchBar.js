@@ -10,18 +10,11 @@ const SearchBar = props => {
     searchTerm
   } = props;
 
-
-
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleSubmit(event);
     }
   }
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   setIsSubmitting(true);
-  // }
 
   return(
     <div className="feed-search-bar-container">

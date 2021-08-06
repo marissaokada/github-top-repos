@@ -12,9 +12,9 @@ const SearchItem = props => {
         <Card.Body>
           <Card.Title>{item.owner.login}</Card.Title>
           <Card.Text>
-            <strong>
-              {convertToK(item.stargazers_count)}{`\u2B50`}
-            </strong>
+            <strong>{convertToK(item.stargazers_count)}{`\u2B50`}</strong>
+            <br />
+            {item.language && item.language}
             <br />
             {item.description}
           </Card.Text>

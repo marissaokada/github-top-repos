@@ -45,6 +45,7 @@ const App = () => {
       console.error(error);
     }
     setIsLoading(false);
+    // handle for search term
     if (isSubmitting) setIsSubmitting(false);
   };
 
@@ -53,6 +54,7 @@ const App = () => {
     setSearchTerm(event.target.value);
   }
 
+  // handles submit button for search bar
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     // Handles case when searching multiple times and when user enters a blank search
