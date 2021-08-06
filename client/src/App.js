@@ -9,16 +9,11 @@ import SearchItem from './components/SearchItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 
-console.log("hello", process.env)
-
 const apiRoutes = {
-  'search': `https://search-github-repos-mokada.herokuapp.com:${process.env.PORT || process.env.REACT_APP_PORT}/api/search/repositories`,
-  'top': `https://search-github-repos-mokada.herokuapp.com:${process.env.PORT || process.env.REACT_APP_PORT}/api/top/repositories`
-  // 'search': '/api/search/repositories',
-  // 'top': '/api/top/repositories'
+  'search': '/api/search/repositories',
+  'top': '/api/top/repositories'
 };
 const pageLimit = 20;
-
 
 const App = () => {
   const [data, setData] = useState(null);

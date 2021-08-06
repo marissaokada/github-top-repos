@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express'),
-      fetch = require('node-fetch');
+      fetch = require('node-fetch'),
+      path = require('path');
 
 const app = express();
 
@@ -13,6 +14,12 @@ const searchOptions = {
     Accept: 'application/vnd.github.v3+json'
   }
 };
+
+app.use('/', express.static(path.join(__dirname, '../client/build')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 app.post('/api/top/repositories', async (req, res) => {
   const searchQueryString = encodeURIComponent('stars:>20');
@@ -38,6 +45,6 @@ app.post('/api/search/repositories', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen((process.env.PORT || 5000), () => {
   console.log(`Server listening on port ${process.env.PORT}!`);
 });
