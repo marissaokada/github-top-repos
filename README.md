@@ -1,10 +1,27 @@
 # GitHub Repositories
 
+### See the project deployed on [Heroku](https://search-github-repos-mokada.herokuapp.com/)
+
 ## Features:
 * By default, fetches top GitHub repositories and view details
 * Users can search GitHub repos by name and view details
 * All results link directly to the original GitHub repositories by clicking 'View Repo'
 * Responsive web design using Bootstrap
+  * View in mobile web and desktop web
+
+## Prerequisites
+* Node.js v14.17.4
+* Yarn v1.22.10 or npm v6.14.14
+* React v17.0.2 (client)
+
+## Built using:
+* [React](https://reactjs.org/)
+* [Node.js](https://nodejs.org/en/)
+* [React-Bootstrap](https://react-bootstrap.github.io/)
+* [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+* [node-fetch](https://github.com/node-fetch/node-fetch)
+
+
 
 ## How to run this repo in DEV:
 
@@ -29,9 +46,9 @@ API_TOKEN=<YOUR-ACCESS-TOKEN-HERE>
 4. Run project:
 ```bash
 cd github-top-repos
+cd client && yarn build
+cd ../
 yarn server
-cd client
-yarn start
 ```
 
 This will open up window pointing to [http://localhost:3000/](http://localhost:3000/)

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import convertToK from '../utils/convertToK';
+import { convertToK } from '../utils/helper';
 
 const SearchItem = props => {
   const { item } = props;

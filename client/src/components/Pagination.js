@@ -1,22 +1,15 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Pagination from 'react-bootstrap/Pagination';
 import PageItem from 'react-bootstrap/PageItem';
-// import '../styles/Pagination.css';
+import { range } from '../utils/helper';
 
+// Total number of results we can retrieve from GitHub
+// See https://docs.github.com/en/rest/reference/search
+const githubSearchLimit = 1000;
 const LEFT_PAGE = "LEFT";
 const RIGHT_PAGE = "RIGHT";
-const range = (from, to, step = 1) => {
-  let i = from;
-  const range = [];
 
-  while (i <= to) {
-    range.push(i);
-    i += step;
-  }
-
-  return range;
-};
-
+// Creates wrapper for pagination
 const PaginationWrapper = props => {
   const {
     totalRecords,
@@ -29,7 +22,7 @@ const PaginationWrapper = props => {
   const [totalPages, setTotalPages] = useState(0);
   
   useEffect(() => {
-    setTotalPages(Math.ceil(totalRecords / pageLimit));
+    setTotalPages(totalRecords < githubSearchLimit ? Math.ceil(totalRecords / pageLimit) : Math.ceil(githubSearchLimit / pageLimit));
       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setTotalPages]);
 
@@ -37,6 +30,8 @@ const PaginationWrapper = props => {
     const totalNumbers = pageNeighbours * 2 + 3;
     const totalBlocks = totalNumbers + 2;
 
+    // When number of pages exceeds the number of blocks we use at one time for pagination
+    // e.g., 1 << 5 6 7 8 9 >> 50
     if (totalPages > totalBlocks) {
       const startPage = Math.max(2, currentPage - pageNeighbours);
       const endPage = Math.min(totalPages - 1, currentPage + pageNeighbours);

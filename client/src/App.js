@@ -15,6 +15,7 @@ const apiRoutes = {
 };
 const pageLimit = 20;
 
+// Main app component
 const App = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +27,7 @@ const App = () => {
   const prevValues = useRef({page, searchTerm, searchType});
   const repoSearchRequest = { searchTerm, page, per_page: pageLimit };
 
+  // Fetches repos
   const fetchRepos = async () => {
     setIsLoading(true);
     const reqObj = {
@@ -46,12 +48,14 @@ const App = () => {
     if (isSubmitting) setIsSubmitting(false);
   };
 
+  // Handles typing into search bar
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   }
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
+    // Handles case when searching multiple times and when user enters a blank search
     if (searchTerm.length > 0) {
       setIsSubmitting(true);
       setPage(1);
@@ -63,6 +67,7 @@ const App = () => {
     }
   }
 
+  // Creates <SearchItem /> components for each github data
   const mapSearchItems = () => {
     if (data && data.githubData) {
       const { items } = data.githubData;
@@ -82,6 +87,7 @@ const App = () => {
     }
   }
 
+  // Handler for changing pages
   const onPageChanged = useCallback(
     (event, page) => {
       event.preventDefault();
