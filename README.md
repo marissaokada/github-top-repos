@@ -10,8 +10,8 @@
   * View in mobile web and desktop web
 
 ## Prerequisites
-* Node.js v14.17.4
-* Yarn v1.22.10 or npm v6.14.14
+* Node.js v16.14.0
+* Yarn v1.22.17 or npm v8.3.1
 * React v17.0.2 (client)
 
 ## Built using:
@@ -51,4 +51,4 @@ cd ../
 yarn server
 ```
 
-This will open up window pointing to [http://localhost:3000/](http://localhost:3000/)
+This will open up window pointing to [http://localhost:4040/](http://localhost:4040/)

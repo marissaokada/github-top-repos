@@ -45,6 +45,6 @@ app.post('/api/search/repositories', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 4040, () => {
   console.log(`Server listening!`);
 });
